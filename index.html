@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
+
+  <link rel="stylesheet" href="./plugins/bootstrap-5.0.2-dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="./plugins/icofont/icofont/icofont.min.css">
+  <link rel="stylesheet" href="./style.css">
+  
+  <title>Frontend Mentor | Product list with cart</title>
+
+</head>
+<body>
+
+
+
+
+<div class="container pt-5 pb-5 w-100">
+    <div class="row content">
+      <div class="col-12 col-md-12 col-lg-8">
+        <div class="row pb-2">
+          <h2 class="dessert_title">Desserts</h2>
+        </div>
+        <div class="dessert-cards row">
+          <div class="dessert-card col-4 p-0 overflow-hidden">
+            <div class="row position-relative">
+              <div class="dessert-card-img col-12 overflow-hidden">
+                <img class=" w-100 h-100 desktop" src="./assets/images/image-waffle-desktop.jpg" alt="">
+                <img class=" w-100 h-100 tablet" src="./assets/images/image-waffle-tablet.jpg" alt="">
+                <img class=" w-100 h-100 mobile" src="./assets/images/image-waffle-mobile.jpg" alt="">
+              </div>
+              <div class="add-to-cart text-center position-absolute">
+                <button  class="add-to-cart-btn"><img class="pe-1" src="./assets/images/icon-add-to-cart.svg" alt=""> Add to cart</button>
+              </div>
+              <div class="add-to-cart add-to-cart-active text-center position-absolute">
+                <button class="add-to-cart-btn-active d-flex justify-content-between align-items-center"><i class="icofont-minus-circle"></i><span></span><i class="icofont-plus-circle"></i></button>
+              </div>
+            </div>
+            <div class="dessert-card-desc pt-4 pb-2 row">
+              <p>Waffle</p>
+              <h4 class="pt-0">Waffle with Berries</h4>
+              <span>$6.50</span>
+            </div>
+          </div>
+          <div class="dessert-card col-4 p-0 overflow-hidden">
+            <div class="row position-relative">
+              <div class="dessert-card-img col-12 overflow-hidden">
+                <img class=" w-100 h-100 desktop" src="./assets/images/image-creme-brulee-desktop.jpg" alt="">
+                <img class=" w-100 h-100 tablet" src="./assets/images/image-creme-brulee-tablet.jpg" alt="">
+                <img class=" w-100 h-100 mobile" src="./assets/images/image-creme-brulee-mobile.jpg" alt="">
+              </div>
+              <div class="add-to-cart text-center position-absolute">
+                <button class="add-to-cart-btn"><img class="pe-1" src="./assets/images/icon-add-to-cart.svg" alt=""> Add to cart</button>
+              </div>
+              <div class="add-to-cart add-to-cart-active text-center position-absolute">
+                <button class=" add-to-cart-btn-active d-flex justify-content-between align-items-center"><i class="icofont-minus-circle"></i><span></span><i class="icofont-plus-circle"></i></button>
+              </div>
+            </div>
+            <div class="dessert-card-desc pt-4 pb-2 row">
+              <p>Crème Brûlée</p>
+              <h4 class="pt-0">Vanilla Bean Crème Brûlée</h4>
+              <span>$7.00</span>
+            </div>
+          </div>
+          <div class="dessert-card col-4 p-0 overflow-hidden">
+            <div class="row position-relative">
+              <div class="dessert-card-img col-12 overflow-hidden">
+                <img class=" w-100 h-100 desktop" src="./assets/images/image-macaron-desktop.jpg" alt="">
+                <img class=" w-100 h-100 tablet" src="./assets/images/image-macaron-tablet.jpg" alt="">
+                <img class=" w-100 h-100 mobile" src="./assets/images/image-macaron-mobile.jpg" alt="">
+              </div>
+              <div class="add-to-cart text-center position-absolute">
+                <button  class="add-to-cart-btn"><img class="pe-1" src="./assets/images/icon-add-to-cart.svg" alt=""> Add to cart</button>
+              </div>
+              <div class="add-to-cart add-to-cart-active text-center position-absolute">
+                <button class=" add-to-cart-btn-active d-flex justify-content-between align-items-center"><i class="icofont-minus-circle"></i><span></span><i class="icofont-plus-circle"></i></button>
+              </div>
+            </div>
+            <div class="dessert-card-desc pt-4 pb-2 row">
+              <p>Macaron</p>
+              <h4 class="pt-0">Macaron Mix of Five</h4>
+              <span>$8.00</span>
+            </div>
+          </div>
+          <div class="dessert-card col-4 p-0 overflow-hidden">
+            <div class="row position-relative">
+              <div class="dessert-card-img col-12 overflow-hidden">
+                <img class=" w-100 h-100 desktop" src="./assets/images/image-tiramisu-desktop.jpg" alt="">
+                <img class=" w-100 h-100 tablet" src="./assets/images/image-tiramisu-tablet.jpg" alt="">
+                <img class=" w-100 h-100 mobile" src="./assets/images/image-tiramisu-mobile.jpg" alt="">
+              </div>
+              <div class="add-to-cart text-center position-absolute">
+                <button  class="add-to-cart-btn"><img class="pe-1" src="./assets/images/icon-add-to-cart.svg" alt=""> Add to cart</button>
+              </div>
+              <div class="add-to-cart add-to-cart-active text-center position-absolute">
+                <button class=" add-to-cart-btn-active d-flex justify-content-between align-items-center"><i class="icofont-minus-circle"></i><span></span><i class="icofont-plus-circle"></i></button>
+              </div>
+            </div>
+            <div class="dessert-card-desc pt-4 pb-2 row">
+              <p>Tiramisu</p>
+              <h4 class="pt-0">Classic Tiramisu</h4>
+              <span>$5.50</span>
+            </div>
+          </div>
+          <div class="dessert-card col-4 p-0 overflow-hidden">
+            <div class="row position-relative">
+              <div class="dessert-card-img col-12 overflow-hidden">
+                <img class=" w-100 h-100 desktop" src="./assets/images/image-baklava-desktop.jpg" alt="">
+                <img class=" w-100 h-100 tablet" src="./assets/images/image-baklava-tablet.jpg" alt="">
+                <img class=" w-100 h-100 mobile" src="./assets/images/image-baklava-mobile.jpg" alt="">
+              </div>
+              <div class="add-to-cart text-center position-absolute">
+                <button  class="add-to-cart-btn"><img class="pe-1" src="./assets/images/icon-add-to-cart.svg" alt=""> Add to cart</button>
+              </div>
+              <div class="add-to-cart add-to-cart-active text-center position-absolute">
+                <button class=" add-to-cart-btn-active d-flex justify-content-between align-items-center"><i class="icofont-minus-circle"></i><span></span><i class="icofont-plus-circle"></i></button>
+              </div>
+            </div>
+            <div class="dessert-card-desc pt-4 pb-2 row">
+              <p>Baklava</p>
+              <h4 class="pt-0">Pistachio Baklava</h4>
+              <span>$4.00</span>
+            </div>
+          </div>
+          <div class="dessert-card col-4 p-0 overflow-hidden">
+            <div class="row position-relative">
+              <div class="dessert-card-img col-12 overflow-hidden">
+                <img class=" w-100 h-100 desktop" src="./assets/images/image-meringue-desktop.jpg" alt="">
+                <img class=" w-100 h-100 tablet" src="./assets/images/image-meringue-tablet.jpg" alt="">
+                <img class=" w-100 h-100 mobile" src="./assets/images/image-meringue-mobile.jpg" alt="">
+              </div>
+              <div class="add-to-cart text-center position-absolute">
+                <button  class="add-to-cart-btn"><img class="pe-1" src="./assets/images/icon-add-to-cart.svg" alt=""> Add to cart</button>
+              </div>
+              <div class="add-to-cart add-to-cart-active text-center position-absolute">
+                <button class=" add-to-cart-btn-active d-flex justify-content-between align-items-center"><i class="icofont-minus-circle"></i><span></span><i class="icofont-plus-circle"></i></button>
+              </div>
+            </div>
+            <div class="dessert-card-desc pt-4 pb-2 row">
+              <p>Pie</p>
+              <h4 class="pt-0">Lemon Meringue Pie</h4>
+              <span>$5.00</span>
+            </div>
+          </div>
+          <div class="dessert-card col-4 p-0 overflow-hidden">
+            <div class="row position-relative">
+              <div class="dessert-card-img col-12 overflow-hidden">
+                <img class=" w-100 h-100 desktop" src="./assets/images/image-cake-desktop.jpg" alt="">
+                <img class=" w-100 h-100 tablet" src="./assets/images/image-cake-tablet.jpg" alt="">
+                <img class=" w-100 h-100 mobile" src="./assets/images/image-cake-mobile.jpg" alt="">
+              </div>
+              <div class="add-to-cart text-center position-absolute">
+                <button  class="add-to-cart-btn"><img class="pe-1" src="./assets/images/icon-add-to-cart.svg" alt=""> Add to cart</button>
+              </div>
+              <div class="add-to-cart add-to-cart-active text-center position-absolute">
+                <button class=" add-to-cart-btn-active d-flex justify-content-between align-items-center"><i class="icofont-minus-circle"></i><span></span><i class="icofont-plus-circle"></i></button>
+              </div>
+            </div>
+            <div class="dessert-card-desc pt-4 pb-2 row">
+              <p>Cake</p>
+              <h4 class="pt-0">Red Velvet Cake</h4>
+              <span>$4.50</span>
+            </div>
+          </div>
+          <div class="dessert-card col-4 p-0 overflow-hidden">
+            <div class="row position-relative">
+              <div class="dessert-card-img col-12 overflow-hidden">
+                <img class=" w-100 h-100 desktop" src="./assets/images/image-brownie-desktop.jpg" alt="">
+                <img class=" w-100 h-100 tablet" src="./assets/images/image-brownie-tablet.jpg" alt="">
+                <img class=" w-100 h-100 mobile" src="./assets/images/image-brownie-mobile.jpg" alt="">
+              </div>
+              <div class="add-to-cart text-center position-absolute">
+                <button  class="add-to-cart-btn"><img class="pe-1" src="./assets/images/icon-add-to-cart.svg" alt=""> Add to cart</button>
+              </div>
+              <div class="add-to-cart add-to-cart-active text-center position-absolute">
+                <button class=" add-to-cart-btn-active d-flex justify-content-between align-items-center"><i class="icofont-minus-circle"></i><span></span><i class="icofont-plus-circle"></i></button>
+              </div>
+            </div>
+            <div class="dessert-card-desc pt-4 pb-2 row">
+              <p>Brownie</p>
+              <h4 class="pt-0">Salted Caramel Brownie</h4>
+              <span>$4.50</span>
+            </div>
+          </div>
+          <div class="dessert-card col-4 p-0 overflow-hidden">
+            <div class="row position-relative">
+              <div class="dessert-card-img col-12 overflow-hidden">
+                <img class=" w-100 h-100 desktop" src="./assets/images/image-panna-cotta-desktop.jpg" alt="">
+                <img class=" w-100 h-100 tablet" src="./assets/images/image-panna-cotta-tablet.jpg" alt="">
+                <img class=" w-100 h-100 mobile" src="./assets/images/image-panna-cotta-mobile.jpg" alt="">
+              </div>
+              <div class="add-to-cart text-center position-absolute">
+                <button  class="add-to-cart-btn"><img class="pe-1" src="./assets/images/icon-add-to-cart.svg" alt=""> Add to cart</button>
+              </div>
+              <div class="add-to-cart add-to-cart-active text-center position-absolute">
+                <button class=" add-to-cart-btn-active d-flex justify-content-between align-items-center"><i class="icofont-minus-circle"></i><span></span><i class="icofont-plus-circle"></i></button>
+              </div>
+            </div>
+            <div class="dessert-card-desc pt-4 pb-2 row">
+              <p>Cotta</p>
+              <h4 class="pt-0">Vanilla Panna Cotta</h4>
+              <span>$6.50</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-12 col-md-12 col-lg-4 cart pt-5 pt-sm-5 pt-md-5 pt-lg-0">
+        <div class="row cart-content bg-white ps-2 pe-2 pt-3 pb-3">
+          <div class="col-12 cart-title">
+            <h4 class="cart-title">Your Cart (<span id="totalProducts">0</span>)</h4>
+          </div>
+          <div class="col-12 pt-4 pb-4 cart-img text-center">
+            <img src="./assets/images/illustration-empty-cart.svg" alt="">
+            <p>Your added items will appear here</p>
+          </div>
+        </div>
+      </div>
+    </div>
+</div>
+
+
+
+
+
+  <footer class="footer w-100 mt-4 pb-4 position-absolute bottom-0 d-flex justify-content-center align-items-center">
+    <div class="attribution">
+      Challenge by <a href="https://www.frontendmentor.io?ref=challenge">Frontend Mentor</a>.
+      Coded by <a href="https://github.com/ossama2323" target="_blank">OSSAMA ARGAZ</a>.
+    </div>  
+  </footer>
+
+
+
+  <script src="./plugins/bootstrap-5.0.2-dist/js/bootstrap.bundle.min.js"></script>
+  <script src="./script.js"></script>
+</body>
+</html>
