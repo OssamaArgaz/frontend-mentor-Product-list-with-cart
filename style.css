@@ -145,6 +145,90 @@ body{
 }
 
 
+.cart-active span{
+    font-size: 14px;
+}
+.dessert-name{
+    color: var(--Rose-900);
+    font-size: 14px;
+    font-weight: 500;
+}
+.dessert-info{
+    color: var(--Rose-400);
+    line-height: 0.2;
+}
+.dessert-price{
+    color: var(--Rose-300);
+}
+
+.icofont-close-line-circled{
+    color: var(--Rose-400);
+    font-size: 18px;
+    font-weight: 600;
+}
+.icofont-close-line-circled:hover{
+    cursor: pointer;
+    color: var(--Rose-900);
+}
+
+.dessert-total-price{
+    color: var(--Rose-500);
+}
+.dessert-quantity{
+    color: var(--Red);
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.total-order-price span,
+.total-order-price{
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--Rose-900);
+}
+
+.carbon-neutral{
+    font-size: 14px;
+    color: var(--Rose-900);
+    background-color: var(--Rose-100);
+    padding: 15px 10px 2px 10px;
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+}
+.carbon-neutral span{
+    font-weight: 700;
+}
+
+.confirm-btn{
+    color: var(--Rose-100);
+    background-color: var(--Red);
+    outline: none;
+    border: 1px solid var(--Rose-500);
+    border-radius: 15px;
+    -webkit-border-radius: 15px;
+    -moz-border-radius: 15px;
+    -ms-border-radius: 15px;
+    -o-border-radius: 15px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
