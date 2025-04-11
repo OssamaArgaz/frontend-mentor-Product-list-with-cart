@@ -1,22 +1,56 @@
-document.querySelectorAll('.add-to-cart-btn').forEach((addToCartBtn, index) => {
-    let quantity = 0;
-    let iconPlus = addToCartBtn.parentElement.nextElementSibling.firstElementChild.lastElementChild;
-    let iconMoins = addToCartBtn.parentElement.nextElementSibling.firstElementChild.firstElementChild;
+// import cardData from "./data.js"
+// let cards = document.querySelector('.dessert-cards')
+
+// for (let i=0; i<cardData.length; i++){
+//         cards.innerHTML += `
+//             <div class="dessert-card col-4 p-0 overflow-hidden">
+//             <div class="row position-relative">
+//               <div class="dessert-card-img col-12 overflow-hidden">
+//                 <img class=" w-100 h-100 desktop" src="${cardData[i].image.desktop}" alt="">
+//                 <img class=" w-100 h-100 tablet" src="${cardData[i].image.tablet}" alt="">
+//                 <img class=" w-100 h-100 mobile" src="${cardData[i].image.mobile}" alt="">
+//               </div>
+//               <div class="add-to-cart text-center position-absolute">
+//                 <button data-index=0 class="add-to-cart-btn"><img class="pe-1"
+//                     src="./assets/images/icon-add-to-cart.svg" alt=""> Add to cart</button>
+//               </div>
+//               <div class="add-to-cart add-to-cart-active text-center position-absolute">
+//                 <button class="add-to-cart-btn-active d-flex justify-content-between align-items-center"><i
+//                     class="icofont-minus-circle" icon-index=0></i><span></span><i
+//                     class="icofont-plus-circle"></i></button>
+//               </div>
+//             </div>
+//             <div class="dessert-card-desc pt-4 pb-2 row">
+//               <p>${cardData[i].category}</p>
+//               <h4 class="pt-0">${cardData[i].name}</h4>
+//               <span>$<span id="dessertPrice">${cardData[i].price}</span></span>
+//             </div>
+//           </div>
+//         `;
+// }
+
+
+document.querySelectorAll('.dessert-card').forEach((dessertCard, index) => {
+    let addToCartBtn = dessertCard.querySelector('.add-to-cart-btn');
+    let iconPlus = dessertCard.querySelector('.icofont-plus-circle');
+    let iconMoins = dessertCard.querySelector('.icofont-minus-circle');
     let product = iconPlus.previousElementSibling;
     let cartActive = document.querySelector('.cart-active');
     let cartImg = document.querySelector('.cart-img');
     let totalProducts = document.getElementById('totalProducts');
-
-
+    
+    
     addToCartBtn.addEventListener('click', function showBtnActive() {
+        let quantity = 0;
         addToCartBtn.parentElement.nextElementSibling.classList.add('d-block');
         addToCartBtn.parentElement.classList.add('d-none');
 
         cartActive.classList.remove('d-none');
         cartImg.classList.add('d-none');
 
-        quantity += 1;
+        quantity++;
         product.innerHTML = quantity;
+
 
         addProductsNumberCart();
 
@@ -27,18 +61,18 @@ document.querySelectorAll('.add-to-cart-btn').forEach((addToCartBtn, index) => {
         addToCartBtn.setAttribute("data-index", index);
         let IndexAttribute = addToCartBtn.getAttribute("data-index");
         addDessert(IndexAttribute, dessertQuantity.textContent, dessertPrice.textContent, dessertName.textContent, dessertTotalPrice);
-
+        calculerTotalOrders()
     });
 
-    iconPlus.addEventListener('click', function addProduct(e) {
+    iconPlus.addEventListener('click', function addProduct() {
         let product = iconPlus.previousElementSibling;
 
 
         let dessertPrice = addToCartBtn.parentElement.parentElement.nextElementSibling.lastElementChild.firstElementChild;
         let dessertName = addToCartBtn.parentElement.parentElement.nextElementSibling.firstElementChild;
 
-        quantity += 1;
-        product.innerHTML = quantity;
+        let quantity = Number(product.textContent)+1
+        product.textContent = quantity;
         addProductsNumberCart();
 
 
@@ -47,7 +81,7 @@ document.querySelectorAll('.add-to-cart-btn').forEach((addToCartBtn, index) => {
         let IndexAttribute = addToCartBtn.getAttribute("data-index");
 
         calculerDessert(IndexAttribute, quantity, dessertPrice.textContent, dessertName.textContent, dessertTotalPrice);
-        
+        calculerTotalOrders()
     });
 
     iconMoins.addEventListener('click', function addProduct() {
@@ -56,8 +90,8 @@ document.querySelectorAll('.add-to-cart-btn').forEach((addToCartBtn, index) => {
         let dessertPrice = addToCartBtn.parentElement.parentElement.nextElementSibling.lastElementChild.firstElementChild;
         let dessertName = addToCartBtn.parentElement.parentElement.nextElementSibling.firstElementChild;
 
-        quantity -= 1;
-        product.innerHTML = quantity;
+        let quantity = Number(product.textContent)-1;
+        product.textContent = quantity;
         if (quantity == 0) {
             addToCartBtn.parentElement.nextElementSibling.classList.remove('d-block');
             addToCartBtn.parentElement.classList.remove('d-none');
@@ -81,12 +115,9 @@ document.querySelectorAll('.add-to-cart-btn').forEach((addToCartBtn, index) => {
         if(dessertQuantity.textContent == 0){
             dessert.remove();
         }
+        calculerTotalOrders()
     });
-
 });
-
-
-
 
 
 function addProductsNumberCart() {
@@ -124,6 +155,7 @@ function addDessert(IndexAttribute, dessertQuantity, dessertPrice, dessertName, 
 
 
 function removeDessert(dessert){
+    let IndexAttribute = dessert.parentElement.parentElement.getAttribute("data-index");
     let cartActive = document.querySelector('.cart-active');
     let cartImg = document.querySelector('.cart-img');
     let totalProducts = document.getElementById('totalProducts');
@@ -136,17 +168,27 @@ function removeDessert(dessert){
         cartImg.classList.remove('d-none');
     }
 
-    document.querySelectorAll('.icofont-minus-circle').forEach(iconMoins => {
-        let dessertnumber = iconMoins.nextElementSibling;
-        let dessertName = dessert.parentElement.previousElementSibling.firstElementChild.firstElementChild.firstElementChild;
-        let productsName = iconMoins.parentElement.parentElement.parentElement.nextElementSibling.firstElementChild;
-        if(dessertName.textContent == productsName.textContent){
-            dessertnumber.textContent = 0;
-            
-            iconMoins.parentElement.parentElement.classList.remove('d-block');
-            iconMoins.parentElement.parentElement.previousElementSibling.classList.remove('d-none');
-        }
-    });
+    let item = document.querySelector(`.dessert-card button[data-index="${IndexAttribute}"]`)
+    let dessertnumber = item.parentElement.nextElementSibling.querySelector('.add-to-cart-btn-active span');
+    let iconMoins = item.parentElement.nextElementSibling.querySelector('.icofont-minus-circle')
+    iconMoins.parentElement.parentElement.classList.remove('d-block');
+    iconMoins.parentElement.parentElement.previousElementSibling.classList.remove('d-none');
+    dessertnumber.innerHTML = 0;
+    quantity = 0;
+
+    // document.querySelectorAll('.icofont-minus-circle').forEach(iconMoins => {
+    //     let dessertnumber = iconMoins.nextElementSibling;
+    //     let resetQuantity = 0;
+    //     let dessertName = dessert.parentElement.previousElementSibling.firstElementChild.firstElementChild.firstElementChild;
+    //     let productsName = iconMoins.parentElement.parentElement.parentElement.nextElementSibling.firstElementChild;
+    //     if(dessertName.textContent == productsName.textContent){
+    //         dessertnumber.innerHTML = resetQuantity;
+    //         quantity = 0;
+    //         iconMoins.parentElement.parentElement.classList.remove('d-block');
+    //         iconMoins.parentElement.parentElement.previousElementSibling.classList.remove('d-none');
+    //     }
+    // });
+    calculerTotalOrders()
 }
 
 function calculerDessert(IndexAttribute, dessertQuantity, dessertPrice, dessertName, dessertTotalPrice) {
@@ -173,8 +215,12 @@ function calculerDessert(IndexAttribute, dessertQuantity, dessertPrice, dessertN
                         <div class="col-2"><i class="icofont-close-line-circled" onclick="removeDessert(this)"></i></div>`;
 }
 
+function calculerTotalOrders(){
+    let totalOrderPriceSpan = document.querySelector('.total-order-price-span')
+    let totalOrders = 0;
 
-// document.querySelectorAll('.icofont-minus-circle').forEach((iconMoins, index) =>{
-//     iconMoins.setAttribute("icon-index", index);
-// })
-
+    document.querySelectorAll('.dessert-total-price').forEach(total => {
+        totalOrders += Number(total.textContent);
+    })
+    totalOrderPriceSpan.innerHTML = totalOrders;
+}
