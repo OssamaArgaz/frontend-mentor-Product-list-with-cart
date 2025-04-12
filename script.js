@@ -111,7 +111,7 @@ document.querySelectorAll('.dessert-card').forEach((dessertCard, index) => {
         calculerDessert(IndexAttribute, dessertImg, quantity, dessertPrice.textContent, dessertName.textContent, dessertTotalPrice);
 
         let dessert = document.querySelector(`.dessert[data-index="${IndexAttribute}"]`);
-        let dessertQuantity = dessert.firstElementChild.firstElementChild.lastElementChild.firstElementChild.firstElementChild;
+        let dessertQuantity = dessert.firstElementChild.nextElementSibling.firstElementChild.lastElementChild.firstElementChild.firstElementChild;
         if(dessertQuantity.textContent == 0){
             dessert.remove();
         }
