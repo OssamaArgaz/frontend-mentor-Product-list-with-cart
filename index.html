@@ -18,6 +18,26 @@
 
 <body>
 
+  <!-- <div class="container-fluid confirm-order position-absolute w-100 h-100 bg-secondary d-flex justify-content-center align-items-center">
+    <div class="cart-active confirm-order-cart col-12 p-4">
+      <div class="desserts">
+
+      </div>
+      <div class="cart-total pt-4 pb-4 ps-2 pe-2 d-flex justify-content-between align-items-center">
+        <span>Order Total</span>
+        <div class="total-order-price">$<span class="total-order-price-span"></span></div>
+      </div>
+      <div class="carbon-neutral text-center">
+        <p><img src="./assets/images/icon-carbon-neutral.svg" alt=""> this is a <span>carbon neutral</span>
+          delivery
+        </p>
+      </div>
+      <div class="confirm-order pt-4 pb-4">
+        <button class="confirm-btn w-100 pt-2 pb-2" type="submit">Confirm Order</button>
+      </div>
+    </div>
+  </div> -->
+
 
 
 
@@ -260,7 +280,7 @@
               </p>
             </div>
             <div class="confirm-order pt-4 pb-4">
-              <button class="confirm-btn w-100 pt-2 pb-2" type="submit">Confirm Order</button>
+              <button class="confirm-btn w-100 pt-2 pb-2" type="submit" data-bs-target="#exampleModalToggle" data-bs-toggle="modal" onclick="confirmOrder()">Confirm Order</button>
             </div>
           </div>
         </div>
@@ -272,8 +292,31 @@
 
 
 
+  <div class="modal fade" id="exampleModalToggle" aria-hidden="true" aria-labelledby="exampleModalToggleLabel" tabindex="-1">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="cart-active cart-active-modal col-12 p-4">
+          <div class="modal-top">
+            <img src="./assets/images/icon-order-confirmed.svg" class="pt-2 pb-2" width="50px" height="50px" alt="">
+            <div class="modal-desc">
+              <h2>Order Confirmed</h2>
+              <p>we hope you enjoy your food!</p>
+            </div>
+          </div>
+          <div class="desserts desserts-modal">
 
-
+          </div>
+          <div class="cart-total cart-total-modal pt-4 pb-4 ps-2 pe-2 d-flex justify-content-between align-items-center">
+            <span>Order Total</span>
+            <div class="total-order-price">$<span class="total-order-price-span total-order-price-span-modal"></span></div>
+          </div>
+          <div class="confirm-order pt-4 pb-4">
+            <button class="confirm-btn confirm-order-btn w-100 pt-2 pb-2" type="submit" data-bs-target="#exampleModalToggle" data-bs-toggle="modal">Start New Order</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 
 
 
